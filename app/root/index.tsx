@@ -1,15 +1,22 @@
 import { Buffer } from "buffer";
-import { useEffect, useState } from "react";
 // import { ToastContainer } from "react-toastify";
+import { utilMajson } from "~/util/util.majson";
+import Auth from "./auth";
 import { hocRoot } from "./store";
-import { ViewClientOnly } from "~/view/view.client-only";
 
 globalThis.Buffer = Buffer;
 
 const Root = hocRoot(({ props, store }) => {
-    return <div>
-        {props.children}
-        {/* <ToastContainer position="bottom-center" limit={1} /> */}
+    return <div style={{ display: store.isApiInitFetched ? undefined : "none" }}>
+        <Auth>
+            {props.children}
+            {/* <ToastContainer position="bottom-center" limit={1} /> */}
+        </Auth>
+        <script
+            dangerouslySetInnerHTML={{
+                __html: `window.ENV = ${utilMajson.stringify(store.publicEnv)}`,
+            }}
+        />
     </div>;
 })
 

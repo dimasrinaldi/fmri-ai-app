@@ -51,8 +51,8 @@ import { apiRoot as root } from "~/root/api.root";
 // // import { apiOne as shoeDetectionOne } from "~/routes/_app.shoe-detection/api.one";
 
 // auth
-// import { apiProfile as authProfile } from "~/root/auth/api.profile";
-// import { apiLogout as authLogout } from "~/root/auth/api.logout";
+import { apiProfile as authProfile } from "~/root/auth/api.profile";
+import { apiLogout as authLogout } from "~/root/auth/api.logout";
 
 // // roles 
 // import { apiList as adminRoleList } from "~/routes/_app.admin.role-list/api.list"
@@ -120,8 +120,8 @@ export const appRouter = trpcRouter({
   // surveyIdRespondentList,
 
   // auth
-  // authProfile,
-  // authLogout,
+  authProfile,
+  authLogout,
   // // role 
   // adminRoleList,
   // // client

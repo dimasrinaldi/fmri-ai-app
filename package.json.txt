@@ -5,10 +5,15 @@
   "sideEffects": false,
   "scripts": {
     "clear": "rm -rf .cache build node_modules public/build",
-    "build": "dotenv -e .env -e .env.sample -- refine build",
-    "dev": "dotenv -e .env -e .env.sample -- refine dev",
+    "buildref": "dotenv -e .env -e .env.sample -- refine build",
+    "devref": "dotenv -e .env -e .env.sample -- refine dev",
     "refine": "dotenv -e .env -e .env.sample -- refine",
-    "start": "dotenv -e .env -e .env.sample -- refine start"
+    "startref": "dotenv -e .env -e .env.sample -- refine start",
+    "build": "remix vite:build",
+    "dev": "dotenv -e .env -e .env.sample -- remix vite:dev --manual",
+    "devremix": "dotenv -e .env -e .env.sample -- remix dev --manual",
+    "devex": "dotenv -e .env -e .env.sample -- node ./server.js",
+    "start": "dotenv -e .env -e .env.sample -- remix-serve ./build/server/index.js"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.24.0",

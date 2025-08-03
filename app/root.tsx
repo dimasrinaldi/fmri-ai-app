@@ -4,6 +4,7 @@ import {
   Links,
   LiveReload,
   Meta,
+  Outlet,
   Scripts,
   ScrollRestoration
 } from "@remix-run/react";
@@ -17,8 +18,7 @@ import globalCss from "~/css/global.css";
 import iconCss from "./css/icon.css";
 import { utilMajson } from "./util/util.majson";
 import { utilPublicEnv } from "./util/util.public-env";
-import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
-
+// import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
 import cssProgress from "nprogress/nprogress.css";
 import toastCss from "react-toastify/dist/ReactToastify.css";
 import { ViewClientOnly } from "./view/view.client-only";
@@ -30,9 +30,8 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: toastCss },
   { rel: "stylesheet", href: globalCss },
   { rel: "stylesheet", href: iconCss },
-  // { rel: "stylesheet", href: utilPublicEnv().cssPath },
-  // { rel: "icon", href: utilPublicEnv().faviconPath, sizes: "32x32", type: "image/png" },
-
+  { rel: "stylesheet", href: utilPublicEnv().cssPath },
+  { rel: "icon", href: utilPublicEnv().faviconPath, sizes: "32x32", type: "image/png" },
 ];
 
 export default function App(): JSX.Element {
@@ -44,23 +43,25 @@ export default function App(): JSX.Element {
       </head>
       <body>
         <ViewClientOnly>{() =>
-          <StyleProvider hashPriority="high">
-            <ConfigProvider theme={RefineThemes.Purple}>
-              <AntdApp>
-                <ProviderTrpc>
-                  <ProviderQurl>
-                    <Root>
-                      <Button>Halobandung</Button>
-                    </Root>
-                  </ProviderQurl>
-                </ProviderTrpc>
-              </AntdApp>
-            </ConfigProvider>
-          </StyleProvider>
+
+          <ProviderTrpc>
+            <ProviderQurl>
+              <Root>
+                <Outlet />
+                <h1>Cumigoreng</h1>
+              </Root>
+            </ProviderQurl>
+          </ProviderTrpc>
+
         }</ViewClientOnly>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${utilMajson.stringify(utilPublicEnv())}`,
+          }}
+        />
       </body>
     </html >
   );
