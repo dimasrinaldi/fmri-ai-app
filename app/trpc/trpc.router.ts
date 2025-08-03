@@ -35,8 +35,8 @@ import { apiOne as shoeDetectionDataIdEditOne } from "~/routes/_app.shoe-detecti
 import { apiEdit as shoeDetectionDataIdEdit } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.edit"
 import { apiDelete as shoeDetectionDataIdDelete } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.delete"
 import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe-detection._filter/api.filter-fields"
-// import { apiStat as shoeDetectionStatsViewBasicStats } from "~/routes/_app.shoe-detection._filter.stats/view.basic-chart/api.stat"
-// import { apiTotal as shoeDetectionStatsViewTotalBox } from "~/routes/_app.shoe-detection._filter.stats/view.total-box/api.total"
+import { apiStat as shoeDetectionStatsViewBasicStats } from "~/routes/_app.shoe-detection._filter.stats/view.basic-chart/api.stat"
+import { apiTotal as shoeDetectionStatsViewTotalBox } from "~/routes/_app.shoe-detection._filter.stats/view.total-box/api.total"
 // import { apiStat as shoeDetectionPivotTableStats } from "~/routes/_app.shoe-detection._filter.pivot-table/api.stat"
 
 
@@ -107,8 +107,8 @@ export const appRouter = trpcRouter({
   shoeDetectionFilterFields,
   shoeDetectionDataIdDelete,
 
-  // shoeDetectionStatsViewBasicStats,
-  // shoeDetectionStatsViewTotalBox,
+  shoeDetectionStatsViewBasicStats,
+  shoeDetectionStatsViewTotalBox,
   // shoeDetectionPivotTableStats,
   shoeDetectionRecognizing,
   shoeDetectionRecognizingList,
