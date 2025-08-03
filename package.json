@@ -7,8 +7,8 @@
     "clear": "rm -rf .cache build node_modules public/build",
     "build": "dotenv -e .env -e .env.sample -- refine build",
     "dev": "dotenv -e .env -e .env.sample -- refine dev",
-    "refine": "dotenv -e .env -e .env.sample -- refine",
-    "start": "dotenv -e .env -e .env.sample -- refine start"
+    "start": "dotenv -e .env -e .env.sample -- refine start ./build/index.js",
+    "refine": "dotenv -e .env -e .env.sample -- refine"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",

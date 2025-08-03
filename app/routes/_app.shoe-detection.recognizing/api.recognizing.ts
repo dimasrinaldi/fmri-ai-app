@@ -105,9 +105,6 @@ export const apiRecognizing = trpcProcedure
     const getAnswerStats = async (model: "gpt" | "mini") => {
       return await generateObject({
         model: model == "mini" ? openai('gpt-4.1-mini') : openai('gpt-4.1'),
-        // model: model == "gpt" ? openai('gpt-4.1-mini-2025-04-14') : google('gemini-2.0-flash'),
-        // model: openai('gpt-4.1-mini'),
-        // model: google('gemini-2.0-flash'),
         temperature: 0.3,
         schema: z.object({
           runners: z.array(
