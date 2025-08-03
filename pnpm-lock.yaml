@@ -128,6 +128,9 @@ importers:
       pg:
         specifier: ^8.16.3
         version: 8.16.3
+      promise-all-properties:
+        specifier: ^5.0.0
+        version: 5.0.0
       react:
         specifier: ^18.0.0
         version: 18.3.1
@@ -4697,6 +4700,9 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+
+  promise-all-properties@5.0.0:
+    resolution: {integrity: sha512-TPYISVZiQq475xsGYLGFpL/PcDTXFZNRxfSAaobgf9sNWqhDaXXlRN9ewVgSgZR0di/rjv4reAP/gqHRl+DHNw==}
 
   promise-inflight@1.0.1:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
@@ -11356,6 +11362,8 @@ snapshots:
   process-nextick-args@2.0.1: {}
 
   process@0.11.10: {}
+
+  promise-all-properties@5.0.0: {}
 
   promise-inflight@1.0.1: {}
 

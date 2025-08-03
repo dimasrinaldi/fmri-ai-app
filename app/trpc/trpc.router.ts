@@ -54,23 +54,23 @@ import { apiClients as appClients } from "~/routes/_app/api.clients"
 import { apiProfile as authProfile } from "~/root/auth/api.profile";
 import { apiLogout as authLogout } from "~/root/auth/api.logout";
 
-// // roles 
-// import { apiList as adminRoleList } from "~/routes/_app.admin.role-list/api.list"
-// // clients
-// import { apiList as adminClientList } from "~/routes/_app.admin.client-list/api.list"
-// import { apiOne as adminClientListIdEditOne } from "~/routes/_app.admin.client-list.$id.edit/api.one"
-// import { apiEdit as adminClientListIdEdit } from "~/routes/_app.admin.client-list.$id.edit/api.edit"
-// import { apiCreate as adminClientListIdEditCreate } from "~/routes/_app.admin.client-list.$id.edit/api.create"
+// roles 
+import { apiList as adminRoleList } from "~/routes/_app.admin.role-list/api.list"
+// clients
+import { apiList as adminClientList } from "~/routes/_app.admin.client-list/api.list"
+import { apiOne as adminClientListIdEditOne } from "~/routes/_app.admin.client-list.$id.edit/api.one"
+import { apiEdit as adminClientListIdEdit } from "~/routes/_app.admin.client-list.$id.edit/api.edit"
+import { apiCreate as adminClientListIdEditCreate } from "~/routes/_app.admin.client-list.$id.edit/api.create"
 
-// // users
-// import { apiList as adminUserList } from "~/routes/_app.admin.user-list/api.list"
-// import { apiOne as adminUserListIdEditOne } from "~/routes/_app.admin.user-list.$id.edit/api.one"
-// import { apiClients as adminUserListIdEditClients } from "~/routes/_app.admin.user-list.$id.edit/api.clients"
-// import { apiRoles as adminUserListIdEditRoles } from "~/routes/_app.admin.user-list.$id.edit/api.roles"
-// import { apiEdit as adminUserListIdEdit } from "~/routes/_app.admin.user-list.$id.edit/api.edit"
-// import { apiCreate as adminUserListIdCreate } from "~/routes/_app.admin.user-list.$id.edit/api.create"
-// import { apiOne as adminUserListIdResetPasswordOne } from "~/routes/_app.admin.user-list.$id.reset-password/api.one"
-// import { apiResetPassword as adminUserListIdResetPassword } from "~/routes/_app.admin.user-list.$id.reset-password/api.reset-password"
+// users
+import { apiList as adminUserList } from "~/routes/_app.admin.user-list/api.list"
+import { apiOne as adminUserListIdEditOne } from "~/routes/_app.admin.user-list.$id.edit/api.one"
+import { apiClients as adminUserListIdEditClients } from "~/routes/_app.admin.user-list.$id.edit/api.clients"
+import { apiRoles as adminUserListIdEditRoles } from "~/routes/_app.admin.user-list.$id.edit/api.roles"
+import { apiEdit as adminUserListIdEdit } from "~/routes/_app.admin.user-list.$id.edit/api.edit"
+import { apiCreate as adminUserListIdCreate } from "~/routes/_app.admin.user-list.$id.edit/api.create"
+import { apiOne as adminUserListIdResetPasswordOne } from "~/routes/_app.admin.user-list.$id.reset-password/api.one"
+import { apiResetPassword as adminUserListIdResetPassword } from "~/routes/_app.admin.user-list.$id.reset-password/api.reset-password"
 
 // // change password
 // import { apiChangePassword as adminChangePassword } from "~/routes/_app.profile.change-password/api.change-password"
@@ -122,23 +122,23 @@ export const appRouter = trpcRouter({
   // auth
   authProfile,
   authLogout,
-  // // role 
-  // adminRoleList,
-  // // client
-  // adminClientList,
-  // adminClientListIdEditOne,
-  // adminClientListIdEdit,
-  // adminClientListIdEditCreate,
-  // // user
-  // adminUserList,
-  // adminUserListIdEditOne,
-  // adminUserListIdEditClients,
-  // adminUserListIdEdit,
-  // adminUserListIdEditRoles,
-  // adminUserListIdCreate,
-  // adminUserListIdResetPasswordOne,
-  // adminUserListIdResetPassword,
-  // // change password
+  // role 
+  adminRoleList,
+  // client
+  adminClientList,
+  adminClientListIdEditOne,
+  adminClientListIdEdit,
+  adminClientListIdEditCreate,
+  // user
+  adminUserList,
+  adminUserListIdEditOne,
+  adminUserListIdEditClients,
+  adminUserListIdEdit,
+  adminUserListIdEditRoles,
+  adminUserListIdCreate,
+  adminUserListIdResetPasswordOne,
+  adminUserListIdResetPassword,
+  // change password
   // adminChangePassword,
   // // survey data
   // surveyIdDataList,
