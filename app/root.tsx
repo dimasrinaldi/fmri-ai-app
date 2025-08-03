@@ -1,30 +1,33 @@
-import { RefineThemes } from "@refinedev/antd";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { createCache, extractStyle } from "@ant-design/cssinjs";
+import Entity from "@ant-design/cssinjs/lib/Cache";
+import { QuestionCircleFilled } from "@ant-design/icons";
+import resetStyle from "@refinedev/antd/dist/reset.css";
+import type { ErrorResponse, LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useRouteError
 } from "@remix-run/react";
-import resetStyle from "@refinedev/antd/dist/reset.css";
-import { App as AntdApp, Button, ConfigProvider } from "antd";
-import { useEffect, useState } from "react";
-import Root from "./root/index";
-import { ProviderTrpc } from "./provider/provider.trpc";
-import { ProviderQurl } from "./provider/provider.qurl";
+import { App as AntdApp, Button, ConfigProvider, Flex, Result } from "antd";
+import { StyleProvider } from "antd-style";
+import appLocale from 'antd/locale/en_US';
+import cssProgress from "nprogress/nprogress.css";
+import React from "react";
+import { renderToString } from "react-dom/server";
+import toastCss from "react-toastify/dist/ReactToastify.css";
 import globalCss from "~/css/global.css";
 import iconCss from "./css/icon.css";
+import { ProviderQurl } from "./provider/provider.qurl";
+import { ProviderTrpc } from "./provider/provider.trpc";
+import Root from "./root/index";
+import { useTheme } from "./use/use.theme";
 import { utilMajson } from "./util/util.majson";
 import { utilPublicEnv } from "./util/util.public-env";
-// import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
-import cssProgress from "nprogress/nprogress.css";
-import toastCss from "react-toastify/dist/ReactToastify.css";
 import { ViewClientOnly } from "./view/view.client-only";
-import appLocale from 'antd/locale/en_US';
-import { StyleProvider } from "antd-style";
-import { useTheme } from "./use/use.theme";
 
 
 export const links: LinksFunction = () => [
@@ -73,18 +76,36 @@ export default function App(): JSX.Element {
     </html >
   );
 }
+export function ErrorBoundary() {
+  const cache = React.useMemo<Entity>(() => createCache(), []);
+  const error = useRouteError() as ErrorResponse;
+  const title = error?.status == 404 ? "Page not found" : "Something went wrong";
+  const subTitle = error?.status == 404 ? "Looks like that page does not exist." : "Looks like something went wrong on our side.";
 
-// export function links() {
-//   return [{ rel: "stylesheet", href: resetStyle }];
-// }
+  const html = <Flex align="center" justify="center" style={{ height: "100vh" }}>
+    <Result
+      {...(error?.status == 404 ? { icon: <QuestionCircleFilled /> } : { status: "error" })}
+      title={title}
+      subTitle={subTitle}
+      extra={
+        <Button
+          type="primary"
+          size="large"
+          href="/"
+        >
+          Back home
+        </Button>
+      }
+    />
+  </Flex>;
 
-// function ClientOnly({ children }: { children: React.ReactNode }) {
-//   const [hasMounted, setHasMounted] = useState(false);
+  renderToString(<StyleProvider cache={cache}>{html}</StyleProvider>);
+  const styleText = extractStyle(cache);
 
-//   useEffect(() => {
-//     setHasMounted(true);
-//   }, []);
-
-//   if (!hasMounted) return null;
-//   return <>{children}</>;
-// }
+  return (<>
+    {html}
+    <div dangerouslySetInnerHTML={{
+      __html: styleText,
+    }}></div>
+  </>);
+}
