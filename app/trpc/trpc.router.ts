@@ -41,9 +41,8 @@ import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe
 
 
 
-// import { apiRecognizing as shoeDetectionRecognizing } from "~/routes/_app.shoe-detection.recognizing/api.recognizing"
-// import { apiList as shoeDetectionRecognizingList } from "~/routes/_app.shoe-detection.recognizing/api.list"
-// import { apiEdit as shoeDetectionRecognizingEdit } from "~/routes/_app.shoe-detection.recognizing/view.edit/api.edit"
+import { apiRecognizing as shoeDetectionRecognizing } from "~/routes/_app.shoe-detection.recognizing/api.recognizing"
+import { apiList as shoeDetectionRecognizingList } from "~/routes/_app.shoe-detection.recognizing/api.list"
 
 // // import { apiList as shoeDetectionEventList } from "~/routes/_app.shoe-detection-event-list._index/api.list";
 // // import { apiOne as shoeDetectionOne } from "~/routes/_app.shoe-detection/api.one";
@@ -111,9 +110,8 @@ export const appRouter = trpcRouter({
   // shoeDetectionStatsViewBasicStats,
   // shoeDetectionStatsViewTotalBox,
   // shoeDetectionPivotTableStats,
-  // shoeDetectionRecognizing,
-  // shoeDetectionRecognizingList,
-  // shoeDetectionRecognizingEdit,
+  shoeDetectionRecognizing,
+  shoeDetectionRecognizingList,
 
   // // synthetic respondent
   // surveyIdRespondentList,
