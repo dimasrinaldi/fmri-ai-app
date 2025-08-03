@@ -1,0 +1,48 @@
+:root {
+    --ant-input-padding-block: 7px !important;
+}
+
+/* :root {
+    --white-primary: #f8f8f8;
+    --white-secondary: #eee;
+    --black-primary: #222;
+    --black-secondary: #333;
+    --brand-primary: #0E65F3;
+    --brand-secondary: #0043B0;
+
+    --antd-success: #52c41a;
+    --antd-warning: #faad14;
+    --antd-error: #ff4d4f;
+}
+
+:root {
+    overscroll-behavior: none;
+}
+
+.ant-layout {
+    background-color: transparent !important;
+}
+
+.navbar-widget .top-bar {
+    background: linear-gradient(40deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, var(--brand-primary) 100%);
+}
+
+.navbar-widget .top-bar .title {
+    color: var(--white-primary);
+}
+
+.login-widget .brand-logo {
+    background-color: var(--brand-primary);
+    border-radius: .5em;
+}
+
+.loading-logo {
+    animation: beat 1.5s infinite alternate;
+    transform-origin: center;
+    background-color: var(--brand-primary);
+    border-radius: .5em;
+}
+
+@keyframes beat {
+    to { transform: scale(1.2); }
+} */

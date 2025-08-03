@@ -16,24 +16,24 @@ const storeUtil = utilCreateWidget({
     useInitStore: (__, ___: IProps) => {
 
         const store = useCraftStore(() => ({
-            // get publicEnv() { return ext.root.data },
-            // get buildId() { return ext.root.data.buildId },
-            // get isApiInitFetched() { return ext.isApiInitFetched },
+            get publicEnv() { return ext.root.data },
+            get buildId() { return ext.root.data.buildId },
+            get isApiInitFetched() { return ext.isApiInitFetched },
             onReloadApp() {
                 if (process.env.NODE_ENV != "production") return
                 utilWindow().location.reload();
             }
         }));
 
-        // const ext = useToMobExt({
-        //     root: trpcUse.root.useQuery(undefined, {
-        //         initialData: utilPublicEnv(),
-        //     }),
-        // });
+        const ext = useToMobExt({
+            root: trpcUse.root.useQuery(undefined, {
+                initialData: utilPublicEnv(),
+            }),
+        });
 
-        // useUpdateEffect(() => {
-        //     store.onReloadApp()
-        // }, [store.buildId]);
+        useUpdateEffect(() => {
+            store.onReloadApp()
+        }, [store.buildId]);
 
         return store;
     }
