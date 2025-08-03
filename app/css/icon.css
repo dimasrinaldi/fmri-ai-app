@@ -1,0 +1,92 @@
+svg.lucide.lucide-folder-kanban {
+    color: #3F51B5;
+}
+svg.lucide.lucide-file-question {
+    color: #BF360C;
+}
+svg.lucide.lucide-book-user {
+    color: #1B5E20;
+}
+svg.lucide.lucide-user-round-cog {
+    color: #2E7D32;
+}
+svg.lucide.lucide-target {
+    color: #7F0000;
+}
+svg.lucide.lucide-grid-3x3 {
+    color: #004D40;
+}
+svg.lucide.lucide-message-circle {
+    color: #E65100;
+}
+svg.lucide.lucide-footprints {
+    color: #1976D2;
+}
+svg.lucide.lucide-info {
+    color: #0D47A1;
+}
+svg.lucide.lucide-bar-chart {
+    color: #6A1B9A;
+}
+svg.lucide.lucide-grid3x3 {
+    color: #C2185B;
+}
+svg.lucide.lucide-filter {
+    color: #4527A0;
+}
+svg.lucide.lucide-bot-message-square {
+    color: #D84315;
+}
+svg.lucide.lucide-scroll-text {
+    color: #4E342E;
+}
+svg.lucide.lucide-database {
+    color: #006064;
+}
+svg.lucide.lucide-pie-chart {
+    color: #E65100;
+}
+svg.lucide.lucide-search-check {
+    color: #3F51B5;
+}
+svg.lucide.lucide-list-restart {
+    color: #CC0000;
+}
+svg.lucide.lucide-log-out {
+    color: #993399;
+}
+svg.lucide.lucide-building2 {
+    color: #006064;
+}
+svg.lucide.lucide-user-round {
+    color: #C51162;
+}
+svg.lucide.lucide-building {
+    color: #B8860B;
+}
+svg.lucide.lucide-wrench {
+    color: #1B5E20;
+}
+svg.lucide.lucide-square-check-big {
+    color: #2E7D32;
+}
+
+.ant-float-btn-primary .lucide,
+.ant-btn-primary .lucide {
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* .ant-menu .ant-menu-item svg.lucide.lucide-list-restart,
+svg.lucide.lucide-list-restart {
+    color: red;
+}
+.ant-menu .ant-menu-item svg.lucide.lucide-log-out,
+svg.lucide.lucide-log-out {
+    color: purple;
+} */

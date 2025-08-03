@@ -1,0 +1,222 @@
+:root {
+    /* --ant-input-padding-block: 7px; */
+    --ant-form-item-margin-bottom: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .ant-pro-layout .ant-pro-layout-content {
+        padding-inline: 8px;
+        padding-block: 8px;
+    }
+    .ant-pro-page-container-children-container {
+        padding-inline: 8px !important;
+    }
+    .ant-pro-page-container .ant-pro-page-container-warp-page-header {
+        padding-inline-start: 8px;
+        padding-inline-end: 8px;
+    }
+    .ant-layout-content .ant-pro-card{
+        max-width: calc(100vw - 28px) ;
+    }
+}
+/* .ant-pro-layout .ant-layout-header.ant-pro-layout-header,
+.ant-pro-page-container .ant-pro-page-container-warp-page-header,
+.ant-pro-layout .ant-layout-sider.ant-pro-sider{
+    background: var(--ant-color-bg-layout);
+}*/
+/* .ant-pro-layout .ant-pro-layout-bg-list{
+    background: var(--ant-color-bg-base);
+}   */
+
+/* main.ant-layout-content.ant-pro-layout-content{
+    background: url("/bg-with-logo-line.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position: center;  
+} */
+
+.ant-pro-page-container-affix{
+    margin-top: 1px;
+}
+.ant-welcome-content-wrapper{
+    text-wrap: auto;
+}
+.ant-pro-page-container-children-container {
+    padding-block-end: 16px;
+}
+.ant-menu-item-group-title .ant-pro-base-menu-inline-item-icon {
+   width:12px;
+}
+
+.lucide {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1px;
+}
+
+/* each widgets */
+.index-widget .ant-pro-layout .ant-pro-layout-bg-list {
+    background: var(--ant-color-bg-base);
+}
+
+/* chat bubble ai html */
+.bubble-aix:first-of-type,
+.bubble-aix p:first-of-type {
+    margin-top: 0;
+}
+.bubble-aix table{
+    border: 1px solid var(--ant-color-border);
+    margin: 4px 0px;
+    border-collapse: collapse;
+}
+.bubble-aix td,
+.bubble-aix th{
+    border: 1px solid var(--ant-color-border);
+    padding:0px 10px;
+}
+.bubble-aix ul,
+.bubble-aix ol{
+   margin:4px 0px;
+   padding-left: 20px;
+}
+.loading-logo {
+    animation: beat 1.5s infinite alternate;
+    transform-origin: center;
+    background-color: var(--brand-primary);
+    border-radius: .5em;
+    transition: width 1s;
+}
+@keyframes beat {
+    to { transform: scale(1.2); }
+}
+
+.ant-breadcrumb span.ant-breadcrumb-link{
+    color: var(--ant-color-text-description);
+}
+div.first-layout.ant-pro-layout main{
+    padding:0px;
+}
+
+.ant-pro-top-nav-header-logo img,
+.login-widget img.brand-logo{
+    border-radius: 5px;
+}
+
+div.ant-segmented{
+    background: var(--ant-color-bg-base) !important;
+    border:1px solid var(--ant-color-border);
+}
+
+/*--------- Antd Table ---------*/
+.ant-pro-card .ant-pro-card-body .ant-table-pagination{
+    margin-bottom: 0px;
+}
+
+div.ant-table-wrapper .ant-table.ant-table-bordered{
+    border:0.1px solid var(--ant-color-border);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+}
+div.ant-table-wrapper .ant-table.ant-table-bordered >.ant-table-container >.ant-table-content >table >thead>tr>th,
+div.ant-table-wrapper .ant-table.ant-table-bordered >.ant-table-container >.ant-table-content >table >tbody>tr>td{
+    border-inline: 0px;
+}
+div.ant-table-wrapper td.ant-table-cell:has(button) {
+    padding:0px;
+}
+
+/*--------- Procard ---------*/
+.ant-pro-card.no-padding .ant-pro-card-body{
+    padding:0px;
+}
+.ant-pro-card.ant-pro-card-border{
+    border:1px solid var(--ant-color-border);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+}
+
+/*--------- Header ---------*/
+div.ant-pro-layout .ant-layout-header.ant-pro-layout-header{
+    border-bottom: 1px solid var(--ant-color-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, var(--ant-color-border), #0E2954) ;
+}
+span.ant-pro-global-header-header-actions-avatar>div>span{
+    color:white;
+}
+
+.ant-page-header .ant-page-header-heading {
+    align-items: center;
+}
+
+.ant-pro-page-container .ant-pro-page-container-warp-page-header .ant-page-header-heading {
+    padding-block-start: 8px;
+}
+
+.ant-pro-page-container .ant-pro-page-container-warp-page-header {
+    /* border-bottom: 1px solid var(--ant-color-border); */
+    padding-block-start: 0px;
+    padding-block-end: 8px;
+    /* margin-bottom: 12px; */
+}
+
+/*--------- Sidebar ---------*/
+/* .ant-pro-layout .ant-layout-sider.ant-pro-sider{
+    background: var(--ant-color-bg-base);
+} */
+
+.ant-pro-layout .ant-layout-sider.ant-pro-sider{
+    border-right: 1px solid var(--ant-color-border);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.ant-pro-layout .ant-pro-sider-footer {
+    padding-block-end: 0px;
+}
+.ant-layout-sider-collapsed .ant-pro-sider-footer .ant-menu-item{
+    text-overflow: unset;
+    padding-left: 12px;
+}
+.ant-layout-sider-collapsed .ant-pro-sider-footer .ant-menu-item .ant-menu-title-content{
+    display: none;
+}
+.ant-layout-sider{
+    margin-top: 56px;
+    padding-bottom: 56px;
+}
+
+.ant-pro-sider-logo,
+.ant-pro-sider-logo a{
+    cursor: default !important;
+}
+
+.ant-pro-sider-menu li.ant-menu-item-selected{
+    color:var(--ant-color-primary);
+    /* -webkit-text-stroke: 1px var(--ant-color-primary); */
+}
+
+/*--------- Other ---------*/
+
+
+
+/* --------- unused -------- */
+
+/* form .ant-form-item input.ant-input{
+    padding:8px;
+}
+
+form .ant-input-affix-wrapper input.ant-input{
+    padding:3px;
+} */
+
+/* div .ant-pro-card,
+table{
+    border:1px solid #2B384B;
+} */
+
+
+/* .ant-menu-item .ant-menu-item-icon{
+    color:unset;
+} */
+/* .ant-menu .ant-menu-item svg.ant-menu-item-icon{
+    color:inherit;
+} */
