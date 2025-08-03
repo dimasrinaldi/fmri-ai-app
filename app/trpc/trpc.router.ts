@@ -30,13 +30,11 @@ import { apiClients as appClients } from "~/routes/_app/api.clients"
 // import { apiStat as surveyIdBrandAwarenessViewAwarenessStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.awareness/api.stat"
 
 // shoe detection
-// import { apiList as shoeDetectionDataList } from "~/routes/_app.shoe-detection._filter.data/api.list"
-// import { apiOne as shoeDetectionDataIdEditOne } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.one"
-// import { apiEdit as shoeDetectionDataIdEdit } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.edit"
-// import { apiDelete as shoeDetectionDataIdDelete } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.delete"
-
-
-// import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe-detection._filter/api.filter-fields"
+import { apiList as shoeDetectionDataList } from "~/routes/_app.shoe-detection._filter.data/api.list"
+import { apiOne as shoeDetectionDataIdEditOne } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.one"
+import { apiEdit as shoeDetectionDataIdEdit } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.edit"
+import { apiDelete as shoeDetectionDataIdDelete } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.delete"
+import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe-detection._filter/api.filter-fields"
 // import { apiStat as shoeDetectionStatsViewBasicStats } from "~/routes/_app.shoe-detection._filter.stats/view.basic-chart/api.stat"
 // import { apiTotal as shoeDetectionStatsViewTotalBox } from "~/routes/_app.shoe-detection._filter.stats/view.total-box/api.total"
 // import { apiStat as shoeDetectionPivotTableStats } from "~/routes/_app.shoe-detection._filter.pivot-table/api.stat"
@@ -104,17 +102,18 @@ export const appRouter = trpcRouter({
   // // surveyIdBrandAwarenessViewAwarenessStat,
 
   // // shoe detection
-  // shoeDetectionDataList,
-  // shoeDetectionDataIdEditOne,
-  // shoeDetectionDataIdEdit,
-  // shoeDetectionFilterFields,
+  shoeDetectionDataList,
+  shoeDetectionDataIdEditOne,
+  shoeDetectionDataIdEdit,
+  shoeDetectionFilterFields,
+  shoeDetectionDataIdDelete,
+
   // shoeDetectionStatsViewBasicStats,
   // shoeDetectionStatsViewTotalBox,
   // shoeDetectionPivotTableStats,
   // shoeDetectionRecognizing,
   // shoeDetectionRecognizingList,
   // shoeDetectionRecognizingEdit,
-  // shoeDetectionDataIdDelete,
 
   // // synthetic respondent
   // surveyIdRespondentList,
