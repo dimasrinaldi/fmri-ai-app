@@ -32,6 +32,7 @@
     "base64mime": "^0.0.3",
     "dayjs": "^1.11.13",
     "dotenv-cli": "^10.0.0",
+    "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.2",
     "file-system-cache": "^3.0.0-alpha.8",
     "global": "^4.4.0",
