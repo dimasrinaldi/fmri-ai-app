@@ -73,7 +73,7 @@ import { apiOne as adminUserListIdResetPasswordOne } from "~/routes/_app.admin.u
 import { apiResetPassword as adminUserListIdResetPassword } from "~/routes/_app.admin.user-list.$id.reset-password/api.reset-password"
 
 // // change password
-// import { apiChangePassword as adminChangePassword } from "~/routes/_app.profile.change-password/api.change-password"
+import { apiChangePassword as adminChangePassword } from "~/routes/_app.profile.change-password/api.change-password"
 // public
 import { apiLogin as login } from "~/routes/login/api.login";
 
@@ -139,7 +139,7 @@ export const appRouter = trpcRouter({
   adminUserListIdResetPasswordOne,
   adminUserListIdResetPassword,
   // change password
-  // adminChangePassword,
+  adminChangePassword,
   // // survey data
   // surveyIdDataList,
 });
