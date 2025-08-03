@@ -7,8 +7,8 @@ import { trpcProcedure, trpcRouter } from "./trpc.app";
 import { apiRoot as root } from "~/root/api.root";
 
 // app
-// import { apiAsk as appChatModalAsk } from "~/routes/_app/view.chat-modal/api.ask";
-// import { apiClients as appClients } from "~/routes/_app/api.clients"
+import { apiAsk as appChatModalAsk } from "~/routes/_app/view.chat-modal/api.ask";
+import { apiClients as appClients } from "~/routes/_app/api.clients"
 // survey
 // import { apiList as surveyList } from "~/routes/_app.survey-list._index/api.list";
 // import { apiOne as surveyIdOne } from "~/routes/_app.survey.$id/api.one";
@@ -74,16 +74,16 @@ import { apiLogout as authLogout } from "~/root/auth/api.logout";
 
 // // change password
 // import { apiChangePassword as adminChangePassword } from "~/routes/_app.profile.change-password/api.change-password"
-// // // public
-// import { apiLogin as login } from "~/routes/login/api.login";
+// public
+import { apiLogin as login } from "~/routes/login/api.login";
 
 export const appRouter = trpcRouter({
   healthcheck: trpcProcedure.query(() => "yay!"),
 
   root,
-  // login,
-  // appChatModalAsk,
-  // appClients,
+  login,
+  appChatModalAsk,
+  appClients,
 
   // // survey
   // // surveyList,
