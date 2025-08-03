@@ -22,6 +22,9 @@ import { utilPublicEnv } from "./util/util.public-env";
 import cssProgress from "nprogress/nprogress.css";
 import toastCss from "react-toastify/dist/ReactToastify.css";
 import { ViewClientOnly } from "./view/view.client-only";
+import appLocale from 'antd/locale/en_US';
+import { StyleProvider } from "antd-style";
+import { useTheme } from "./use/use.theme";
 
 
 export const links: LinksFunction = () => [
@@ -35,6 +38,7 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App(): JSX.Element {
+  const theme = useTheme();
   return (
     <html lang="en">
       <head>
@@ -43,16 +47,19 @@ export default function App(): JSX.Element {
       </head>
       <body>
         <ViewClientOnly>{() =>
-
           <ProviderTrpc>
             <ProviderQurl>
-              <Root>
-                <Outlet />
-                <h1>Cumigoreng</h1>
-              </Root>
+              <StyleProvider hashPriority="high">
+                <ConfigProvider theme={theme} locale={appLocale} >
+                  <AntdApp>
+                    <Root>
+                      <Outlet />
+                    </Root>
+                  </AntdApp>
+                </ConfigProvider>
+              </StyleProvider>
             </ProviderQurl>
           </ProviderTrpc>
-
         }</ViewClientOnly>
         <ScrollRestoration />
         <Scripts />
