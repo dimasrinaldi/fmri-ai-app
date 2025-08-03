@@ -17,6 +17,7 @@ import globalCss from "~/css/global.css";
 import iconCss from "./css/icon.css";
 import { utilMajson } from "./util/util.majson";
 import { utilPublicEnv } from "./util/util.public-env";
+import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
 
 import cssProgress from "nprogress/nprogress.css";
 import toastCss from "react-toastify/dist/ReactToastify.css";
@@ -43,17 +44,19 @@ export default function App(): JSX.Element {
       </head>
       <body>
         <ViewClientOnly>{() =>
-          <ConfigProvider theme={RefineThemes.Purple}>
-            <AntdApp>
-              <ProviderTrpc>
-                <ProviderQurl>
-                  <Root>
-                    <Button>Halobandung</Button>
-                  </Root>
-                </ProviderQurl>
-              </ProviderTrpc>
-            </AntdApp>
-          </ConfigProvider>
+          <StyleProvider hashPriority="high">
+            <ConfigProvider theme={RefineThemes.Purple}>
+              <AntdApp>
+                <ProviderTrpc>
+                  <ProviderQurl>
+                    <Root>
+                      <Button>Halobandung</Button>
+                    </Root>
+                  </ProviderQurl>
+                </ProviderTrpc>
+              </AntdApp>
+            </ConfigProvider>
+          </StyleProvider>
         }</ViewClientOnly>
         <ScrollRestoration />
         <Scripts />

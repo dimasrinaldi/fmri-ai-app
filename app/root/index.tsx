@@ -1,7 +1,8 @@
 import { Buffer } from "buffer";
 import { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import { hocRoot } from "./store";
+import { ViewClientOnly } from "~/view/view.client-only";
 
 globalThis.Buffer = Buffer;
 
