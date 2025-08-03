@@ -8,10 +8,15 @@ import {
   ScrollRestoration
 } from "@remix-run/react";
 
+//@ts-ignore
 import resetStyle from "@refinedev/antd/dist/reset.css";
 import { App as AntdApp, Button, ConfigProvider } from "antd";
 
 import { useEffect, useState } from "react";
+import Root from "./root/index";
+import { ProviderTrpc } from "./provider/provider.trpc";
+import { ProviderQurl } from "./provider/provider.qurl";
+import { ViewClientOnly } from "./view/view.client-only";
 
 export const meta: MetaFunction = () => [
   {
@@ -29,18 +34,24 @@ export default function App(): JSX.Element {
         <Links />
       </head>
       <body>
-        <ConfigProvider theme={RefineThemes.Purple}>
-          <AntdApp>
-            <ClientOnly>
-              <Button>Coba halobandun keren sekali</Button>
-            </ClientOnly>
-          </AntdApp>
-        </ConfigProvider>
+        <ViewClientOnly>{() =>
+          <ConfigProvider theme={RefineThemes.Purple}>
+            <AntdApp>
+              <ProviderTrpc>
+                <ProviderQurl>
+                  <Root>
+                    <Button>Halobandung</Button>
+                  </Root>
+                </ProviderQurl>
+              </ProviderTrpc>
+            </AntdApp>
+          </ConfigProvider>
+        }</ViewClientOnly>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
-    </html>
+    </html >
   );
 }
 
