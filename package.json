@@ -61,7 +61,7 @@
     "react-dom": "^18.0.0",
     "react-resize-detector": "^12.1.0",
     "react-responsive": "^10.0.1",
-    "react-toastify": "^11.0.5",
+    "react-toastify": "10.0.4",
     "react-use": "^17.6.0",
     "snakecase-keys": "^9.0.2",
     "superjson": "^2.2.2",

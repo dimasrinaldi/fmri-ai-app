@@ -159,8 +159,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(react@18.3.1)
       react-toastify:
-        specifier: ^11.0.5
-        version: 11.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 10.0.4
+        version: 10.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-use:
         specifier: ^17.6.0
         version: 17.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5168,11 +5168,11 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react-toastify@11.0.5:
-    resolution: {integrity: sha512-EpqHBGvnSTtHYhCPLxML05NLY2ZX0JURbAdNYa6BUkk+amz4wbKBQvoKQAB0ardvSarUBuY4Q4s1sluAzZwkmA==}
+  react-toastify@10.0.4:
+    resolution: {integrity: sha512-etR3RgueY8pe88SA67wLm8rJmL1h+CLqUGHuAoNsseW35oTGJEri6eBTyaXnFKNQ80v/eO10hBYLgz036XRGgA==}
     peerDependencies:
-      react: ^18 || ^19
-      react-dom: ^18 || ^19
+      react: '>=16'
+      react-dom: '>=16'
 
   react-universal-interface@0.6.2:
     resolution: {integrity: sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==}
@@ -12077,7 +12077,7 @@ snapshots:
       '@remix-run/router': 1.23.0
       react: 18.3.1
 
-  react-toastify@11.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-toastify@10.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       clsx: 2.1.1
       react: 18.3.1

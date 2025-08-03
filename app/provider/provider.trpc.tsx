@@ -2,12 +2,12 @@ import { httpBatchLink } from "@trpc/client";
 import _ from "lodash";
 import nprogress from "nprogress";
 import { ReactNode, useState } from "react";
-// import { toast } from "react-toastify";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import validator from "validator";
 import { trpcUse } from "~/trpc/trpc.fetch";
 import { utilTitleCase } from "~/util/util.title-case";
 import { utilWindow } from "~/util/util.window";
+import { toast } from "react-toastify";
 
 type TProps = {
     children: ReactNode;
@@ -79,11 +79,10 @@ export const ProviderTrpc = (props: TProps) => {
                         }
 
                         if (notifMessage.length > 0 && typeof window !== "undefined") {
-                            const { toast } = require("react-toastify");
                             toast(notifMessage, {
                                 toastId: generateToastId(),
                                 type: notifType as any,
-                                position: "bottom-center",
+                                position: "bottom-left",
                             });
                         }
                         return result;
