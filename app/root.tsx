@@ -102,10 +102,17 @@ export function ErrorBoundary() {
   renderToString(<StyleProvider cache={cache}>{html}</StyleProvider>);
   const styleText = extractStyle(cache);
 
-  return (<>
-    {html}
-    <div dangerouslySetInnerHTML={{
-      __html: styleText,
-    }}></div>
-  </>);
+  return (<html lang="en">
+    <head>
+      <title>
+        {title}
+      </title>
+    </head>
+    <body>
+      {html}
+      <div dangerouslySetInnerHTML={{
+        __html: styleText,
+      }} />
+    </body>
+  </html>);
 }
