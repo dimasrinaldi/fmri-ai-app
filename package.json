@@ -8,7 +8,8 @@
     "build": "dotenv -e .env -e .env.sample -- refine build",
     "dev": "dotenv -e .env -e .env.sample -- refine dev",
     "start": "dotenv -e .env -e .env.sample -- refine start ./build/index.js",
-    "refine": "dotenv -e .env -e .env.sample -- refine"
+    "refine": "dotenv -e .env -e .env.sample -- refine",
+    "buildstart": "yarn clear && yarn install && yarn build && yarn start"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",

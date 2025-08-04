@@ -52,7 +52,7 @@ const IndexRoute = hocIndex(({ store }) => {
                 <ProCard>
                     <Flex gap="large" align="center">
                         <div>
-                            <Typography.Title level={1}>Welcome to {env.appName} !</Typography.Title>
+                            <Typography.Title level={1}>Welcome to {env.appName}</Typography.Title>
 
                             <Typography.Paragraph>
                                 {env.appName} is a smart ecosystem of research tools designed to help brands
