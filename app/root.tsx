@@ -40,7 +40,7 @@ export const links: LinksFunction = () => [
   { rel: "icon", href: utilPublicEnv().faviconPath, sizes: "32x32", type: "image/png" },
 ];
 
-export default function App(): JSX.Element {
+export default function App() {
   const theme = useTheme();
   return (
     <html lang="en">
