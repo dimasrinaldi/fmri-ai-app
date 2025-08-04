@@ -10,6 +10,7 @@ import { useToMobExt } from "~/use/use.to-mob-ext";
 import ErrorBoundary500 from "~/view/view.error-boundary-500";
 import { utilHasWindow } from "./util.has-window";
 import { utilLogMoStore } from "./util.log-mo-store";
+import usePublicEnv from "~/use/use.publicEnv";
 
 export function utilCreateWidget<
     TMyStore extends object,
@@ -99,11 +100,11 @@ type TViewUnauthorizedPage = ResultProps & {
 const ViewUnauthorizedPage = observer((_props: TViewUnauthorizedPage) => {
     const props = useToMobExt(_props);
     const qurl = useQurlStore();
-    // const env = usePublicEnv()
+    const env = usePublicEnv()
     const store = useCraftStore(() => ({
         onRedirect() {
-            // const path = env.loginPath;
-            // qurl.set({ path });
+            const path = env.loginPath;
+            qurl.set({ path });
         },
     }));
     const { token } = theme.useToken()
