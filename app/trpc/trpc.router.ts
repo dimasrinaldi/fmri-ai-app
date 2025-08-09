@@ -29,13 +29,14 @@ import { apiOne as surveyIdInfoOne } from "~/routes/_app.survey.$id.info/api.one
 import { apiList as surveyIdDataList } from "~/routes/_app.survey.$id.data/api.list"
 import { apiList as surveyIdRespondentList } from "~/routes/_app.survey.$id.respondent/api.list";
 import { apiList as surveyIdAnswerList } from "~/routes/_app.survey.$id.answer/api.list"
+import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$id._filter/api.filter-fields"
+import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id._filter.stats/view.basic-chart/api.stat"
+
 
 // import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat._index/api.ask";
-// import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$id._filter/api.filter-fields"
 // import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table._index/api.stat"
 // import { answering as surveyIdAnswerAnswering } from "~/routes/_app.survey.$id.answer._index/api.answering"
 // import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer._index/api.clear-answers"
-// import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id._filter.stats._index/view.basic-chart/api.stat"
 
 // // survey brand awareness
 // import { apiStat as surveyIdBrandAwarenessViewTomStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.tom/api.stat"
@@ -128,12 +129,13 @@ export const appRouter = trpcRouter({
   surveyIdDataList,
   surveyIdAnswerList,
 
+  surveyIdFilterFields,
+  surveyIdStatsViewBasicStats,
+
   // // surveyIdChatAsk,
-  // // surveyIdFilterFields,
   // // surveyIdPivotTableStat,
   // // surveyIdAnswerAnswering,
   // // surveyIdAnswerClearAnswer,
-  // // surveyIdStatsViewBasicStats,
 
   // // // survey brand awareness
   // // surveyIdBrandAwarenessViewTomStat,

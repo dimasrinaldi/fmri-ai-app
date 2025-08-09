@@ -20,11 +20,12 @@ const SurveyIdRoute = hocSurveyId(({ store }) => {
             name: 'Information',
             icon: <Info />,
         },
+        {
+            path: `/survey/${store.surveyId}/stats`,
+            name: 'Statistics',
+            icon: <BarChart />,
+        },
         // {
-        //     path: `/survey/${store.surveyId}/stats`,
-        //     name: 'Statistics',
-        //     icon: <BarChart />,
-        // }, {
         //     path: `/survey/${store.surveyId}/brand-awareness`,
         //     name: 'Brand Awareness',
         //     icon: <Target />,
