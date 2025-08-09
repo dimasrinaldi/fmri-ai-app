@@ -16,14 +16,9 @@ export const meta: MetaFunction = () => {
 };
 const HomeRoute = hocHome(({ store }) => {
 
-    const readyFeatures = [
-        getDataApp("BrandDetection").id
-    ]
+
     const activeFeatures = useVal(() => {
-        let result: TAppId[] = ["BrandDetection"]
-        result = result.filter((item) => {
-            return readyFeatures.includes(item);
-        })
+        let result: TAppId[] = ["BrandDetection", "BrandHealth"]
         return result;
     });
 
@@ -35,7 +30,7 @@ const HomeRoute = hocHome(({ store }) => {
         }, {
             key: getDataApp("BrandHealth").id,
             logo: "/feature-fuse-brand.png",
-            goto: "/brand-health/dashboard" //TODO: change this
+            goto: "/survey/list" //TODO: change this
 
         }, {
             key: getDataApp("SyntheticRespondent").id,

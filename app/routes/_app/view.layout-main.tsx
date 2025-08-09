@@ -11,7 +11,6 @@ const ViewLayoutMain = observer((props: ProLayoutProps) => {
 
     const store = useAppStore();
     const env = usePublicEnv()
-    const qurl = useQurlStore()
 
     useMount(() => {
         store.setIsMainLayout(true);

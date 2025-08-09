@@ -9,15 +9,29 @@ import { apiRoot as root } from "~/root/api.root";
 // app
 import { apiAsk as appChatModalAsk } from "~/routes/_app/view.chat-modal/api.ask";
 import { apiClients as appClients } from "~/routes/_app/api.clients"
+
+// shoe detection
+import { apiList as shoeDetectionDataList } from "~/routes/_app.shoe-detection._filter.data/api.list"
+import { apiOne as shoeDetectionDataIdEditOne } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.one"
+import { apiEdit as shoeDetectionDataIdEdit } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.edit"
+import { apiDelete as shoeDetectionDataIdDelete } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.delete"
+import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe-detection._filter/api.filter-fields"
+import { apiStat as shoeDetectionStatsViewBasicStats } from "~/routes/_app.shoe-detection._filter.stats/view.basic-chart/api.stat"
+import { apiTotal as shoeDetectionStatsViewTotalBox } from "~/routes/_app.shoe-detection._filter.stats/view.total-box/api.total"
+import { apiStat as shoeDetectionPivotTableStats } from "~/routes/_app.shoe-detection._filter.pivot-table/api.stat"
+import { apiRecognizing as shoeDetectionRecognizing } from "~/routes/_app.shoe-detection.recognizing/api.recognizing"
+import { apiList as shoeDetectionRecognizingList } from "~/routes/_app.shoe-detection.recognizing/api.list"
+
 // survey
-// import { apiList as surveyList } from "~/routes/_app.survey-list._index/api.list";
-// import { apiOne as surveyIdOne } from "~/routes/_app.survey.$id/api.one";
+import { apiList as surveyList } from "~/routes/_app.survey.list/api.list";
+import { apiOne as surveyIdOne } from "~/routes/_app.survey.$id/api.one";
+import { apiOne as surveyIdInfoOne } from "~/routes/_app.survey.$id.info/api.one"
+
 // import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat._index/api.ask";
 // import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$id._filter/api.filter-fields"
 // import { apiList as surveyIdDataList } from "~/routes/_app.survey.$id.data._index/api.list"
 // import { apiList as surveyIdRespondentList } from "~/routes/_app.survey.$id.respondent._index/api.list";
 // import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table._index/api.stat"
-// import { apiOne as surveyIdInfoOne } from "~/routes/_app.survey.$id.info._index/api.one"
 // import { apiList as surveyIdAnswerList } from "~/routes/_app.survey.$id.answer._index/api.list"
 // import { answering as surveyIdAnswerAnswering } from "~/routes/_app.survey.$id.answer._index/api.answering"
 // import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer._index/api.clear-answers"
@@ -29,20 +43,6 @@ import { apiClients as appClients } from "~/routes/_app/api.clients"
 // import { apiStat as surveyIdBrandAwarenessViewBumoStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.bumo/api.stat"
 // import { apiStat as surveyIdBrandAwarenessViewAwarenessStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.awareness/api.stat"
 
-// shoe detection
-import { apiList as shoeDetectionDataList } from "~/routes/_app.shoe-detection._filter.data/api.list"
-import { apiOne as shoeDetectionDataIdEditOne } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.one"
-import { apiEdit as shoeDetectionDataIdEdit } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.edit"
-import { apiDelete as shoeDetectionDataIdDelete } from "~/routes/_app.shoe-detection._filter.data.$id.edit/api.delete"
-import { apiFilterFields as shoeDetectionFilterFields } from "~/routes/_app.shoe-detection._filter/api.filter-fields"
-import { apiStat as shoeDetectionStatsViewBasicStats } from "~/routes/_app.shoe-detection._filter.stats/view.basic-chart/api.stat"
-import { apiTotal as shoeDetectionStatsViewTotalBox } from "~/routes/_app.shoe-detection._filter.stats/view.total-box/api.total"
-import { apiStat as shoeDetectionPivotTableStats } from "~/routes/_app.shoe-detection._filter.pivot-table/api.stat"
-
-
-
-import { apiRecognizing as shoeDetectionRecognizing } from "~/routes/_app.shoe-detection.recognizing/api.recognizing"
-import { apiList as shoeDetectionRecognizingList } from "~/routes/_app.shoe-detection.recognizing/api.list"
 
 // // import { apiList as shoeDetectionEventList } from "~/routes/_app.shoe-detection-event-list._index/api.list";
 // // import { apiOne as shoeDetectionOne } from "~/routes/_app.shoe-detection/api.one";
@@ -81,24 +81,6 @@ export const appRouter = trpcRouter({
   login,
   appChatModalAsk,
   appClients,
-
-  // // survey
-  // // surveyList,
-  // // surveyIdOne,
-  // // surveyIdChatAsk,
-  // // surveyIdFilterFields,
-  // // surveyIdPivotTableStat,
-  // // surveyIdInfoOne,
-  // // surveyIdAnswerList,
-  // // surveyIdAnswerAnswering,
-  // // surveyIdAnswerClearAnswer,
-  // // surveyIdStatsViewBasicStats,
-
-  // // // survey brand awareness
-  // // surveyIdBrandAwarenessViewTomStat,
-  // // surveyIdBrandAwarenessViewSpontStat,
-  // // surveyIdBrandAwarenessViewBumoStat,
-  // // surveyIdBrandAwarenessViewAwarenessStat,
 
   // // shoe detection
   shoeDetectionDataList,
@@ -139,6 +121,24 @@ export const appRouter = trpcRouter({
   adminChangePassword,
   // // survey data
   // surveyIdDataList,
+
+  // // survey
+  surveyList,
+  surveyIdOne,
+  surveyIdInfoOne,
+  // // surveyIdChatAsk,
+  // // surveyIdFilterFields,
+  // // surveyIdPivotTableStat,
+  // // surveyIdAnswerList,
+  // // surveyIdAnswerAnswering,
+  // // surveyIdAnswerClearAnswer,
+  // // surveyIdStatsViewBasicStats,
+
+  // // // survey brand awareness
+  // // surveyIdBrandAwarenessViewTomStat,
+  // // surveyIdBrandAwarenessViewSpontStat,
+  // // surveyIdBrandAwarenessViewBumoStat,
+  // // surveyIdBrandAwarenessViewAwarenessStat,
 });
 
 export type AppRouter = typeof appRouter;
