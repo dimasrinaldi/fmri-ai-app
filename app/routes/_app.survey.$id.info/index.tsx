@@ -21,7 +21,7 @@ const SurveyIdRespondent = hocSurveyIdInfo(({ store }) => {
     return (
         <ViewPageContainer
             title={pageTitle}
-            extra={<Button icon={<Edit />} type="primary">Edit</Button>}
+        // extra={<Button icon={<Edit />} type="primary">Edit</Button>}
         >
             {store.isLoadingOne
                 ? <ViewLoadingLogo />
