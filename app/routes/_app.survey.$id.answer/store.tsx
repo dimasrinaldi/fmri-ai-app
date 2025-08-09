@@ -36,13 +36,13 @@ const storeUtil = utilCreateWidget({
             get countTotal() { return ext.list.data.countTotal },
             get countPercent() { return store.countTotal == 0 ? 0 : _.floor(store.count / store.countTotal * 100, 2) },
             get isListLoading() { return !ext.list.isFetched },
-            // get isAnsweringLoading() { return ext.answering.isLoading || store.answering },
+            // get isAnsweringLoading() { return ext.answering.isPending || store.answering },
             get answeringStatus(): "idle" | "answering" | "stopping" {
                 if (store.answering == true) return "answering";
-                if (store.answering == false && ext.answering.isLoading) return "stopping";
+                if (store.answering == false && ext.answering.isPending) return "stopping";
                 return "idle"
             },
-            get isClearAnswerLoading() { return ext.clearAnswer.isLoading },
+            get isClearAnswerLoading() { return ext.clearAnswer.isPending },
             onSetSearch(search: string) {
                 state.setState({ search, page: 0 });
             },
@@ -67,7 +67,7 @@ const storeUtil = utilCreateWidget({
             },
             onStartAnswerAi() {
                 state.setState({ answering: true });
-                if (ext.answering.isLoading) return;
+                if (ext.answering.isPending) return;
                 const answering = () => ext.answering.mutate({
                     surveyId: store.surveyId,
                 }, {
@@ -116,7 +116,7 @@ const storeUtil = utilCreateWidget({
         });
 
         useMount(() => {
-            if (store.answeringStatus == "answering" && !ext.answering.isLoading) {
+            if (store.answeringStatus == "answering" && !ext.answering.isPending) {
                 store.onStartAnswerAi();
             }
         })

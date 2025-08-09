@@ -29,14 +29,15 @@ import { apiOne as surveyIdInfoOne } from "~/routes/_app.survey.$id.info/api.one
 import { apiList as surveyIdDataList } from "~/routes/_app.survey.$id.data/api.list"
 import { apiList as surveyIdRespondentList } from "~/routes/_app.survey.$id.respondent/api.list";
 import { apiList as surveyIdAnswerList } from "~/routes/_app.survey.$id.answer/api.list"
+import { answering as surveyIdAnswerAnswering } from "~/routes/_app.survey.$id.answer/api.answering"
+import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer/api.clear-answers"
 import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$id._filter/api.filter-fields"
 import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id._filter.stats/view.basic-chart/api.stat"
 
 
-// import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat._index/api.ask";
-// import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table._index/api.stat"
-// import { answering as surveyIdAnswerAnswering } from "~/routes/_app.survey.$id.answer._index/api.answering"
-// import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer._index/api.clear-answers"
+// import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat/api.ask";
+import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table/api.stat"
+
 
 // // survey brand awareness
 import { apiStat as surveyIdBrandAwarenessViewTomStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.tom/api.stat"
@@ -45,7 +46,7 @@ import { apiStat as surveyIdBrandAwarenessViewBumoStat } from "~/routes/_app.sur
 import { apiStat as surveyIdBrandAwarenessViewAwarenessStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.awareness/api.stat"
 
 
-// // import { apiList as shoeDetectionEventList } from "~/routes/_app.shoe-detection-event-list._index/api.list";
+// // import { apiList as shoeDetectionEventList } from "~/routes/_app.shoe-detection-event-list/api.list";
 // // import { apiOne as shoeDetectionOne } from "~/routes/_app.shoe-detection/api.one";
 
 // auth
@@ -128,14 +129,16 @@ export const appRouter = trpcRouter({
   surveyIdInfoOne,
   surveyIdDataList,
   surveyIdAnswerList,
+  surveyIdAnswerAnswering,
+  surveyIdAnswerClearAnswer,
 
   surveyIdFilterFields,
   surveyIdStatsViewBasicStats,
+  surveyIdPivotTableStat,
+
 
   // // surveyIdChatAsk,
-  // // surveyIdPivotTableStat,
-  // // surveyIdAnswerAnswering,
-  // // surveyIdAnswerClearAnswer,
+
 
   // survey brand awareness
   surveyIdBrandAwarenessViewTomStat,

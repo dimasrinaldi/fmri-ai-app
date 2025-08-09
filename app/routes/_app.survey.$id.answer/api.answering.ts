@@ -1,15 +1,15 @@
-import { openai } from "@ai-sdk/openai";
 import { TRPCError } from "@trpc/server";
 import { generateObject, generateText } from "ai";
 import promiseAllProperties from "promise-all-properties";
 import { z } from "zod";
 import { db } from "~/db/db.app";
 import { trpcProcedure } from "~/trpc/trpc.app";
-import { deepseek } from '@ai-sdk/deepseek';
+// import { deepseek } from '@ai-sdk/deepseek';
 import dayjs from "dayjs";
 import { DbSurveyData } from "~/db/db.survey-data";
 import _ from "lodash";
-import { google } from "@ai-sdk/google";
+// import { google } from "@ai-sdk/google";
+import { openai } from "@ai-sdk/openai"
 
 export const answering = trpcProcedure
   .input(z.object({
@@ -70,7 +70,8 @@ export const answering = trpcProcedure
 
       const aiRef = await promiseAllProperties({
         answer: generateText({
-          model: deepseek('deepseek-chat'),
+          // model: deepseek('deepseek-chat'),
+          model: openai('gpt-4.1'),
           temperature: 0.5,
           system: `You are a survey respondent with the following demographic profile: ${JSON.stringify(respondent)}\n. 
             Please provide authentic and realistic responses based on this demographic background.\n
@@ -92,7 +93,8 @@ export const answering = trpcProcedure
       })
 
       const { object } = await generateObject({
-        model: deepseek("deepseek-chat"),
+        // model: deepseek("deepseek-chat"),
+        model: openai('gpt-4.1'),
         temperature: 0,
         schema: z.object({
           surveyTitle: z.string().describe("the title of the survey. Max 3 words. Lowercase"),
