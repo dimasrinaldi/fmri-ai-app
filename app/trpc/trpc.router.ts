@@ -35,7 +35,7 @@ import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$i
 import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id._filter.stats/view.basic-chart/api.stat"
 
 
-// import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat/api.ask";
+import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat/api.ask";
 import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table/api.stat"
 
 
@@ -135,9 +135,7 @@ export const appRouter = trpcRouter({
   surveyIdFilterFields,
   surveyIdStatsViewBasicStats,
   surveyIdPivotTableStat,
-
-
-  // // surveyIdChatAsk,
+  surveyIdChatAsk,
 
 
   // survey brand awareness

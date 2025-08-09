@@ -35,11 +35,11 @@ const SurveyIdRoute = hocSurveyId(({ store }) => {
             name: 'Pivot Table',
             icon: <Grid3x3 />,
         },
-        // {
-        //     path: `/survey/${store.surveyId}/chat`,
-        //     name: 'Chat',
-        //     icon: <MessageCircle />,
-        // },
+        {
+            path: `/survey/${store.surveyId}/chat`,
+            name: 'Chat',
+            icon: <MessageCircle />,
+        },
         {
             path: `/survey/${store.surveyId}/data`,
             name: 'Data',
