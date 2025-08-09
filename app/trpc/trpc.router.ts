@@ -39,10 +39,10 @@ import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id
 // import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer._index/api.clear-answers"
 
 // // survey brand awareness
-// import { apiStat as surveyIdBrandAwarenessViewTomStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.tom/api.stat"
-// import { apiStat as surveyIdBrandAwarenessViewSpontStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.spont/api.stat"
-// import { apiStat as surveyIdBrandAwarenessViewBumoStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.bumo/api.stat"
-// import { apiStat as surveyIdBrandAwarenessViewAwarenessStat } from "~/routes/_app.survey.$id._filter.brand-awareness._index/view.awareness/api.stat"
+import { apiStat as surveyIdBrandAwarenessViewTomStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.tom/api.stat"
+import { apiStat as surveyIdBrandAwarenessViewSpontStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.spont/api.stat"
+import { apiStat as surveyIdBrandAwarenessViewBumoStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.bumo/api.stat"
+import { apiStat as surveyIdBrandAwarenessViewAwarenessStat } from "~/routes/_app.survey.$id._filter.brand-awareness/view.awareness/api.stat"
 
 
 // // import { apiList as shoeDetectionEventList } from "~/routes/_app.shoe-detection-event-list._index/api.list";
@@ -137,11 +137,11 @@ export const appRouter = trpcRouter({
   // // surveyIdAnswerAnswering,
   // // surveyIdAnswerClearAnswer,
 
-  // // // survey brand awareness
-  // // surveyIdBrandAwarenessViewTomStat,
-  // // surveyIdBrandAwarenessViewSpontStat,
-  // // surveyIdBrandAwarenessViewBumoStat,
-  // // surveyIdBrandAwarenessViewAwarenessStat,
+  // survey brand awareness
+  surveyIdBrandAwarenessViewTomStat,
+  surveyIdBrandAwarenessViewSpontStat,
+  surveyIdBrandAwarenessViewBumoStat,
+  surveyIdBrandAwarenessViewAwarenessStat,
 });
 
 export type AppRouter = typeof appRouter;
