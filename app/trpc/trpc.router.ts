@@ -26,13 +26,13 @@ import { apiList as shoeDetectionRecognizingList } from "~/routes/_app.shoe-dete
 import { apiList as surveyList } from "~/routes/_app.survey.list/api.list";
 import { apiOne as surveyIdOne } from "~/routes/_app.survey.$id/api.one";
 import { apiOne as surveyIdInfoOne } from "~/routes/_app.survey.$id.info/api.one"
+import { apiList as surveyIdDataList } from "~/routes/_app.survey.$id.data/api.list"
+import { apiList as surveyIdRespondentList } from "~/routes/_app.survey.$id.respondent/api.list";
+import { apiList as surveyIdAnswerList } from "~/routes/_app.survey.$id.answer/api.list"
 
 // import { apiAsk as surveyIdChatAsk } from "~/routes/_app.survey.$id.chat._index/api.ask";
 // import { apiFilterFields as surveyIdFilterFields } from "~/routes/_app.survey.$id._filter/api.filter-fields"
-// import { apiList as surveyIdDataList } from "~/routes/_app.survey.$id.data._index/api.list"
-// import { apiList as surveyIdRespondentList } from "~/routes/_app.survey.$id.respondent._index/api.list";
 // import { apiStat as surveyIdPivotTableStat } from "~/routes/_app.survey.$id._filter.pivot-table._index/api.stat"
-// import { apiList as surveyIdAnswerList } from "~/routes/_app.survey.$id.answer._index/api.list"
 // import { answering as surveyIdAnswerAnswering } from "~/routes/_app.survey.$id.answer._index/api.answering"
 // import { clearAnswer as surveyIdAnswerClearAnswer } from "~/routes/_app.survey.$id.answer._index/api.clear-answers"
 // import { apiStat as surveyIdStatsViewBasicStats } from "~/routes/_app.survey.$id._filter.stats._index/view.basic-chart/api.stat"
@@ -96,7 +96,7 @@ export const appRouter = trpcRouter({
   shoeDetectionRecognizingList,
 
   // // synthetic respondent
-  // surveyIdRespondentList,
+  surveyIdRespondentList,
 
   // auth
   authProfile,
@@ -120,16 +120,17 @@ export const appRouter = trpcRouter({
   // change password
   adminChangePassword,
   // // survey data
-  // surveyIdDataList,
 
   // // survey
   surveyList,
   surveyIdOne,
   surveyIdInfoOne,
+  surveyIdDataList,
+  surveyIdAnswerList,
+
   // // surveyIdChatAsk,
   // // surveyIdFilterFields,
   // // surveyIdPivotTableStat,
-  // // surveyIdAnswerList,
   // // surveyIdAnswerAnswering,
   // // surveyIdAnswerClearAnswer,
   // // surveyIdStatsViewBasicStats,

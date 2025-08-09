@@ -30,6 +30,7 @@ const SurveyIdRespondent = hocSurveyIdInfo(({ store }) => {
                     extra={store.item.id}
                     headerBordered
                     split="horizontal"
+                    bordered
                 >
                     <ProCard title="Title" >
                         <Typography.Title level={3}>{store.item.title}</Typography.Title>

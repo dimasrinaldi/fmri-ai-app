@@ -4,7 +4,7 @@ import ViewLoadingLogo from '~/view/loading-pages/view.loading-logo';
 import { hocSurveyId } from "./store";
 import ViewLayout from '../_app.survey/view.layout-main';
 import { TypeRoute } from '../_app/type.route';
-import { BarChart, BookUser, FileQuestion, FolderKanban, Grid3x3, Info, MessageCircle, ScrollText, Target } from 'lucide-react';
+import { BarChart, BookUser, Database, FileQuestion, FolderKanban, Grid3x3, Info, MessageCircle, ScrollText, Target } from 'lucide-react';
 
 const SurveyIdRoute = hocSurveyId(({ store }) => {
     if (store.isLoadingOne) return <ViewLoadingLogo />;
@@ -39,19 +39,20 @@ const SurveyIdRoute = hocSurveyId(({ store }) => {
         //     name: 'Chat',
         //     icon: <MessageCircle />,
         // },
-        // {
-        //     path: `/survey/${store.surveyId}/data`,
-        //     name: 'Data',
-        //     icon: <FileQuestion />,
-        // }, ...(store.respondentType != "Synthetic" ? [] : [{
-        //     path: `/survey/${store.surveyId}/respondent`,
-        //     name: 'Respondent',
-        //     icon: <BookUser />,
-        // }, {
-        //     path: `/survey/${store.surveyId}/answer`,
-        //     name: 'Answer',
-        //     icon: <ScrollText />,
-        // }])
+        {
+            path: `/survey/${store.surveyId}/data`,
+            name: 'Data',
+            icon: <Database />,
+        },
+        ...(store.respondentType != "Synthetic" ? [] : [{
+            path: `/survey/${store.surveyId}/respondent`,
+            name: 'Respondent',
+            icon: <BookUser />,
+        }, {
+            path: `/survey/${store.surveyId}/answer`,
+            name: 'Answer',
+            icon: <ScrollText />,
+        }])
     ]
 
     return <ViewLayout routes={routes}>
